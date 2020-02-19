@@ -28,7 +28,7 @@ mgus2 %>%
   theme(axis.title=element_blank(),axis.title.y=element_blank())+
   facet_wrap(~cont_var,scales="free",ncol=1)
 ```
-![Figure 1](https://github.com/drjgauthier/tableone2.0/p1.png "Figure 1")
+![alt text](https://github.com/drjgauthier/tableone2.0/p1.png "Figure 1")
 
 Now let's replace the jittered lines with jittered points:
 ```R
