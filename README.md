@@ -1,7 +1,7 @@
 # tableone2.0 ~ Replace Table 1 with fancy ggplots
 
 I dream someday to replace the infamous "Table 1." with better visualizations...
-
+Let's have a go with *ggplot2* and his companion package *ggridges*.
 ```R
 library(survival)
 library(tidyverse)
