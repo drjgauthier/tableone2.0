@@ -1,8 +1,7 @@
-# tableone2.0
-Replace Table 1 with fancy ggplots
+# tableone2.0 ~ Replace Table 1 with fancy ggplots
 
-I dream to replace the infamous "Table 1." with better visualizations...
-Toying with the ggridges functions:
+I dream someday to replace the infamous "Table 1." with better visualizations...
+
 ```R
 library(survival)
 library(tidyverse)
@@ -29,7 +28,10 @@ mgus2 %>%
   theme(axis.title=element_blank(),axis.title.y=element_blank())+
   facet_wrap(~cont_var,scales="free",ncol=1)
 ```
-```
+![alt text](https://github.com/drjgauthier/tableone2.0/images/p1.png "Figure 1")
+
+Now let's replace the jittered lines with jittered points:
+```R
 mgus2 %>% 
   pivot_longer(names_to="cont_var",values_to="value",-c(id,sex,dxyr,ptime,pstat,futime,death)) %>% 
   mutate(y=1,
@@ -54,8 +56,8 @@ mgus2 %>%
   theme(axis.title=element_blank(),axis.title.y=element_blank())+
   facet_wrap(~cont_var,scales="free",ncol=2,nrow=2)
 ```
-Adding histograms:
-```
+Adding some spiked histograms:
+```R
 mgus2 %>% 
   #  summarize_at(vars(var),median,na.rm=TRUE)
   ggplot(aes(x = hgb,y=y)) +
