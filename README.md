@@ -28,7 +28,7 @@ mgus2 %>%
   theme(axis.title=element_blank(),axis.title.y=element_blank())+
   facet_wrap(~cont_var,scales="free",ncol=1)
 ```
-![alt text](p1.png "Figure 1")
+![alt text](images/p1.png "Figure 1")
 
 Now let's replace the jittered lines with jittered points:
 ```R
@@ -56,7 +56,7 @@ mgus2 %>%
   theme(axis.title=element_blank(),axis.title.y=element_blank())+
   facet_wrap(~cont_var,scales="free",ncol=2,nrow=2)
 ```
-![alt text](p2.png "Figure 2")
+![alt text](images/p2.png "Figure 2")
 
 Adding some spiked histograms:
 ```R
@@ -98,6 +98,6 @@ mgus2 %>%
   scale_x_continuous(limits = c(0,22)) -> p2
 ggpubr::ggarrange(p1,p2,ncol=1,nrow=2,heights = c(4, 1),align="v")
 ```
-![alt text](p3.png "Figure 3")
+![alt text](/images/p3.png "Figure 3")
 
 Comments and suggestions are appreciated :slight_smile:
