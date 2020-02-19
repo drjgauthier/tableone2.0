@@ -28,7 +28,7 @@ mgus2 %>%
   theme(axis.title=element_blank(),axis.title.y=element_blank())+
   facet_wrap(~cont_var,scales="free",ncol=1)
 ```
-![alt text](images/p1.png "Figure 1")
+<img src="images/p1.png" width="100" height="100">
 
 Now let's replace the jittered lines with jittered points:
 ```R
