@@ -56,7 +56,7 @@ mgus2 %>%
   theme(axis.title=element_blank(),axis.title.y=element_blank())+
   facet_wrap(~cont_var,scales="free",ncol=2,nrow=2)
 ```
-![alt text](images/p2.png "Figure 2")
+![alt text](images/p2.png "Figure 2"|width=25|height=25)
 
 Adding some spiked histograms:
 ```R
