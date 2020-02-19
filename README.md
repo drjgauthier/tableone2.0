@@ -56,10 +56,12 @@ mgus2 %>%
   theme(axis.title=element_blank(),axis.title.y=element_blank())+
   facet_wrap(~cont_var,scales="free",ncol=2,nrow=2)
 ```
+![alt text](p2.png "Figure 2")
+
 Adding some spiked histograms:
 ```R
 mgus2 %>% 
-  #  summarize_at(vars(var),median,na.rm=TRUE)
+  mutate(y=1) %>% 
   ggplot(aes(x = hgb,y=y)) +
   geom_density_ridges(
 #    jittered_points = TRUE,
@@ -83,9 +85,9 @@ mgus2 %>%
         plot.margin=margin(margin(b=0))) -> p1
 
 mgus2 %>% 
-  #  summarize_at(vars(var),median,na.rm=TRUE)
   filter(!is.na(hgb)) %>% 
-  ggplot(aes(x = hgb,y=y)) +
+  mutate(y=1) %>% 
+  ggplot(aes(x = hgb,y=1)) +
   geom_col()+
   theme_ridges()+
   theme(axis.title=element_blank(),
@@ -94,6 +96,8 @@ mgus2 %>%
         axis.line.x = element_blank(),
         axis.ticks.x = element_blank())+
   scale_x_continuous(limits = c(0,22)) -> p2
-ggarrange(p1,p2,ncol=1,nrow=2,heights = c(4, 1),align="v")
+ggpubr::ggarrange(p1,p2,ncol=1,nrow=2,heights = c(4, 1),align="v")
 ```
+![alt text](p3.png "Figure 3")
+
 Comments and suggestions are appreciated :slight_smile:
